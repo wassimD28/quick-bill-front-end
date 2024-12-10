@@ -1,7 +1,10 @@
-export const HomePage = ()=>{
-    return(
-        <>
-        <h1>Home Page</h1>
-        </>
-    )
-}
+
+export const HomePage = () => {
+  return (
+    <>
+      <div className="h-full w-full py-2 dark:bg-[#0e0c0b]">
+        test
+      </div>
+    </>
+  );
+};
