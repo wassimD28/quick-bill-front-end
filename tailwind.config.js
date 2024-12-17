@@ -4,6 +4,12 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
   theme: {
     extend: {
+      fontSize: {
+        prevXl: ["12px", "18px"],
+        prevLg: ["10px", "16px"],
+        prevBase: ["8px", "12px"],
+        prevSm: ["6px", "8px"],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
