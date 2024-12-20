@@ -1,50 +1,75 @@
-# React + TypeScript + Vite
+# Quick Bill - Frontend
+![Screenshot_20-12-2024_1305_localhost](https://github.com/user-attachments/assets/dc18cf59-1b6f-4d9b-86b9-64d99d5040fb)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+The **Quick Bill** project is a feature-rich frontend application designed for creating and customizing invoices with a sleek and intuitive user interface. Built using **React TypeScript**, styled with **Tailwind CSS**, and enhanced by **ShadCN**, it offers users the tools to effortlessly design professional invoices.
 
-Currently, two official plugins are available:
+## Features
+- **Invoice Design:**
+  - Customize invoice layout, colors, and fonts.
+  - Add, edit, and remove invoice items dynamically.
+  - Preview invoices in real time.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **User-Friendly Interface:**
+  - Modern and responsive design.
+  - Intuitive input fields for seamless user experience.
 
-## Expanding the ESLint configuration
+- **Export Options:**
+  - Export invoices as PDF or share them online.
+  - Print-ready formatting.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Customization Options:**
+  - Add company logos and branding.
+  - Configure taxes, discounts, and subtotals.
 
-- Configure the top-level `parserOptions` property like this:
+## Technologies Used
+- **React** with **TypeScript**
+- **Tailwind CSS** for styling
+- **ShadCN** for UI components
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Folder Structure
+```
+frontend/
+├── src/
+│   ├── components/       # Reusable React components
+│   ├── pages/            # Page-level components
+│   ├── utils/            # Utility functions and helpers
+│   ├── assets/           # Images and icons
+│   └── App.tsx           # Application entry point
+├── public/               # Static files
+├── tailwind.config.js    # Tailwind CSS configuration
+├── tsconfig.json         # TypeScript configuration
+├── package.json          # Dependencies and scripts
+└── README.md             # Project documentation
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Setup Instructions
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Steps
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/quick-bill-frontend.git
+   cd quick-bill-frontend
+   ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+2. Install dependencies:
+   ```bash
+   npm install
+
+3. Start the development server:
+   ```bash
+   npm run dev
+
+4. Open the app in your browser:
+   Navigate to `http://localhost:3000`.
+
+## Development Notes
+- **Tailwind CSS:**
+  - Configure utility classes in `tailwind.config.js`.
+  - Use Tailwind's responsive design features to ensure a mobile-first approach.
+
+- **ShadCN:**
+  - Utilize pre-built components for consistency and faster development.
+  - Customize components as needed to match the project's branding.
+
+
