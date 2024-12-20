@@ -13,13 +13,22 @@ import { ItemTable } from "./Information panel/itemTable.component";
 import { InvoiceDetails } from "./Information panel/invoiceDetails.component";
 import { PaymentInfo } from "./Information panel/paymentInfo.component";
 import { NotesAndTerms } from "./Information panel/notesAndTerms.component";
-import { Calculator, CreditCard, Grid3X3, Handshake, ReceiptText, Users } from "lucide-react";
+import { Calculator, CreditCard, FileUp, Grid3X3, Handshake, ReceiptText, Users } from "lucide-react";
 import { InvoiceAdjustment } from "./Information panel/invoiceAdjustment.component";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 export const InvoiceInformation = () => {
   return (
     <div className="flex w-[420px] flex-col rounded-md p-3 dark:bg-card">
-      <CardTitle className="mb-2">Details</CardTitle>
+      <CardTitle className="mb-2 flex justify-between items-center">Details
+        <Link to={"/preview"}>
+          <Button variant={"outline"} className="h-9 2xl:h-10">
+            Export
+            <FileUp/>
+          </Button>
+        </Link>
+      </CardTitle>
       <hr />
       <div className="flex flex-col overflow-y-scroll scrollbar-none">
         <Accordion type="single" collapsible className="w-full">

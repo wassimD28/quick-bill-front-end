@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Card } from "./ui/card";
 import { MyLink } from "@/types/interfaces/common.interface";
 import { cn } from "@/lib/utils";
+import logo from "../assets/quick-bill-logo.svg";
 
 const links: MyLink[] = [
   { label: "Home", path: "/invoice", active: true },
@@ -24,20 +25,23 @@ export const NavBar = () => {
   return (
     <>
       <div className="fixed w-full px-3 py-1">
-        <Card className="flex w-full items-center justify-center 2xl:py-3 xl:gap-5 gap-3 py-2">
-          {links.map((link, index) => (
-            <Link
-              onClick={() => onLinkClick(index)}
-              key={index}
-              to={link.path}
-              className={cn(
-                "w-fit rounded-lg 2xl:px-4 2xl:py-1 px-2 py-0.5 font-semibold text-white/60 duration-150 ease-in-out hover:bg-secondary hover:text-white/90 2xl:text-2xl",
-                link.active && "bg-primary-foreground text-card",
-              )}
-            >
-              {link.label}
-            </Link>
-          ))}
+        <Card className="flex w-full items-center justify-between px-3 2xl:py-3 py-2">
+          <img className="h-7" src={logo} alt="test" />
+          <div className="flex w-full items-center justify-center xl:gap-5 gap-3">
+            {links.map((link, index) => (
+              <Link
+                onClick={() => onLinkClick(index)}
+                key={index}
+                to={link.path}
+                className={cn(
+                  "w-fit rounded-lg 2xl:px-4 2xl:py-1 px-2 py-0.5 font-semibold text-white/60 duration-150 ease-in-out hover:bg-secondary hover:text-white/90 2xl:text-2xl",
+                  link.active && "bg-primary-foreground text-card",
+                )}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
         </Card>
       </div>
     </>

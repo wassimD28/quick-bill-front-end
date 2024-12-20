@@ -70,7 +70,7 @@ export const InvoicePreview = () => {
     shipping.amountType,
     taxableAmount,
   );
-  const total = taxableAmount - calculatedTax - calculatedShipping;
+  const total = taxableAmount + calculatedTax + calculatedShipping;
   const sender = accounts.find(
     (account) => account.role === AccountRole.SENDER,
   );
@@ -94,6 +94,7 @@ export const InvoicePreview = () => {
         <Controls />
         <TransformComponent>
           <div className="flex h-[582px] w-[600px] justify-center 2xl:h-[874px] 2xl:w-[1000px] 2xl:mt-[148px]">
+            {/* start invoice design  */}
             <div className="aspect-[1/1.414] h-[582px] overflow-hidden rounded border border-gray-300 bg-white p-6 shadow-lg 2xl:scale-150">
               {/* Header with invoice number */}
               <div className="mb-6 flex justify-between">
@@ -254,9 +255,9 @@ export const InvoicePreview = () => {
                         Total amount in words :
                       </h3>
                       <h3 className="text-prevBase font-bold capitalize text-primary/80">
-                        {convertAmountToWords(subTotal, currency)}
+                        {convertAmountToWords(total, currency)}
                       </h3>
-                      {/* Paiment Inforamtion */}
+                      {/* payment Inforamtion */}
                       <div className="mt-3 flex flex-col">
                         <h4 className="w-fit rounded-r border-l-2 border-primary bg-primary/10 px-1 py-0.5 text-prevBase font-semibold text-gray-500">
                           Paiment Inforamtion
@@ -416,6 +417,7 @@ export const InvoicePreview = () => {
                 </div>
               </div>
             </div>
+            {/* end invoice design */}
           </div>
         </TransformComponent>
       </TransformWrapper>

@@ -2,13 +2,12 @@
 import { CardTitle } from "@/components/ui/card";
 import { InvoicePreview } from "./_components/InvoicePreview.component";
 import { InvoiceInformation } from "./_components/invoiceInformation.component";
-import { InvoiceProvider } from "@/context/invoice.context";
 
 export const InvoicePage = () => {
   return (
     <>
       <div className="flex h-full w-full flex-row justify-between px-3 pb-1 pt-14 dark:bg-[#0e0c0b] dark:text-white 2xl:pt-20">
-        <InvoiceProvider>
+        
           {/* Invoice details */}
           <InvoiceInformation />
           {/* Invoice live preview */}
@@ -21,7 +20,7 @@ export const InvoicePage = () => {
               This part is still under development.
             </div>
           </div>
-        </InvoiceProvider>
+        
       </div>
     </>
   );

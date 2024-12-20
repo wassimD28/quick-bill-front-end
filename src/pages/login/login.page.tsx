@@ -11,6 +11,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@radix-ui/react-label";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import logo from "../../assets/quick-bill-logo.svg"
 
 export const LoginPage = () => {
   const [username, setUsername] = useState("");
@@ -20,7 +21,9 @@ export const LoginPage = () => {
       <div className="flex h-full w-full items-center justify-center bg-neutral-50 dark:bg-[#0e0c0b]">
         <Card className="w-[450px]">
           <CardHeader>
-            <CardTitle className="text-center">Sign Up</CardTitle>
+            <img className="h-14" src={logo} alt="" />
+            <CardTitle className="text-start">log In</CardTitle>
+            <p className="text-sm text-white/60">Log to your account.</p>
           </CardHeader>
           <CardContent>
             <form>
